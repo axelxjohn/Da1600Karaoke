@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>The 1600 Karaoke</title>
+  <style>
+    /* Add custom styles for layout */
+    #home {
+      display: inline;
+      position:relative;
+      height: auto;
+    }
+
+    #top-opm-songs,
+    #karaoke-menu {
+      width: 48%; /* Adjust the width as needed */
+    }
+
+    /* Adjust text alignment and remove bullets */
+    #karaoke-menu {
+      text-align: center;
+      background-color: white; /* Add white background */
+      padding: 0.8em; /* Add padding for better appearance */
+      border-radius: 8px; /* Add border radius for rounded corners */
+      float: right;
+    }
+
+    #karaoke-menu h2 {
+      color: #333; /* Set text color for better visibility */
+    }
+
+    #karaoke-menu h3 {
+      font-size: medium;
+      text-align: left;
+      margin-top: 1.5em; /* Adjust margin for section headings */
+    }
+
+    #karaoke-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #karaoke-menu li {
+      margin-bottom: 0.5em; /* Adjust spacing between items */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="book-now.html">Book Now</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+
+    
+    <section id="home">
+      <div class="imagecontainer">
+        <img id="image1" src="pics\image3.jpg" alt="Sing">
+        <img id="image2" src="pics\image1.jpg" alt="Sing">
+      </div>
+      
+      <h1>Welcome to The 1600 Karaoke!</h1>
+      <p>Experience the ultimate karaoke fun in Pasig City! Choose from our regular and premium rooms, and book your session for a night of music and joy.</p>
+      <!-- Top 10 OPM Songs on the right side -->
+      <div id="top-opm-songs">
+        <h2 style="color: rgb(206, 26, 26);">The 1600 Karaoke - Top 10 Most Picked Songs</h2>
+        <ol>
+          <li>“Anak” by Freddie Aguilar</li>
+          <li>“Himala” by Rivermaya</li>
+          <li>“Ang Huling El Bimbo” by Eraserheads</li>
+          <li>“Kahit Maputi Na Ang Buhok Ko” by Rey Valera</li>
+          <li>“Tadhana” by Up Dharma Down</li>
+          <li>“Pare Ko” by Eraserheads</li>
+          <li>“With A Smile” by South Border</li>
+          <li>“Hawak Kamay” by Yeng Constantino</li>
+          <li>“Sana Maulit Muli” by Gary Valenciano</li>
+          <li>“Kisapmata” by Rivermaya</li>
+        </ol>
+      </div>
+
+      <!-- Karaoke Night Menu on the left side -->
+      <div id="karaoke-menu">
+        <h2>Karaoke Night Menu</h2>
+
+        <h3 style="font-style: italic;">Appetizers:</h3>
+        <ul>
+          <li>Cheese Stick Dynamite</li>
+          <li>Chicken Adobo Skewers</li>
+          <li>Lumpiang Shanghai</li>
+          <li>Tuna Sisig Sliders</li>
+          <li>Loaded French Fries</li>
+        </ul>
+
+        <h3 style="font-style: italic;">Main Course:</h3>
+        <ul>
+          <li>Pizza Ala Pinoy</li>
+          <li>Adobo Nachos</li>
+        </ul>
+
+        <h3 style="font-style: italic;">Drinks:</h3>
+        <ul>
+          <li>San Miguel Beer</li>
+          <li>Mango Rum Punch</li>
+          <li>Tanduay Rum Cocktails</li>
+          <li>Red Horse Beer</li>
+          <li>Gin Pomelo Spritz</li>
+          <li>Calamansi Gin Fizz</li>
+          <li>Mango Gin Smash</li>
+        </ul>
+
+        <h3 style="font-style: italic;">Dessert:</h3>
+        <ul>
+          <li>Halo-Halo Parfait</li>
+          <li>Leche Flan Cupcakes</li>
+          <li>Ube Macapuno Cake</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 The 1600 Karaoke</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the current page URL
+      var currentPage = window.location.pathname.split('/').pop();
+
+      // Highlight the active link based on the current page
+      var navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(function (link) {
+        var linkPage = link.getAttribute('href').split('/').pop();
+        if (linkPage === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>About The 1600 Karaoke</title>
+  <style>
+    h1 {
+        color: #000000;
+        text-align: center;
+    }
+
+    h2 {
+        color: #000000;
+        text-align: left;
+        margin-left: 2%;
+        font-style: italic;
+        font-size: large;
+    }
+
+    p {
+        line-height: 1.6;
+        text-align: left;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    ol {
+        margin-left: 20px;
+        margin-right: 2%;
+    }
+
+    em {
+        display: block;
+        text-align: center;
+        color: #ff6600;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="book-now.html">Book Now</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <section id="about">
+    <img id="image4" src="pics\image4.jpg" alt="Sing">
+    <h1>About The 1600 Karaoke</h1>
+    <p style="text-align: center;">Welcome to The 1600 Karaoke, where the passion for music meets the vibrant energy of Pasig City! Our name is inspired by the heartbeat of this incredible city.</p>
+    <h2>Our Story</h2>
+    <p>Founded with a love for music and a deep appreciation for community, The 1600 Karaoke was born out of a desire to create a unique space for music enthusiasts in Pasig City. Our journey began with the vision to provide a platform where people could come together, express themselves through music, and create lasting memories.</p>
+
+    <h2>Our Mission</h2>
+    <p>At The 1600 Karaoke, our mission is to be more than just a karaoke venue; we strive to be a hub for musical connection and community engagement. We believe in the power of music to bring people together, and our goal is to foster an environment where individuals of all ages and backgrounds can share their love for music.</p>
+
+    <h2>Our Commitment</h2>
+    <p>We are dedicated to creating a space that celebrates music, fosters connections, and embraces the spirit of Pasig City. Whether you're a solo performer, a group of friends, or a family looking for a fun night out, The 1600 Karaoke welcomes you with open arms.</p>
+
+    <p style="text-align: center;">Join us on this musical journey, and let's make every note count!</p>
+
+    <p><em>Discover. Connect. Sing - The 1600 Karaoke</em></p>
+  </section>
+
+  <footer>
+    <p style="text-align: center;">&copy; 2024 The 1600 Karaoke</p>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the current page URL
+    var currentPage = window.location.pathname.split('/').pop();
+
+    // Highlight the active link based on the current page
+    var navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(function (link) {
+      var linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>

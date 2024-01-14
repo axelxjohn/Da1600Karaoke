@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Book Your Karaoke Session</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="book-now.html" class="active">Book Now</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="booking-form">
+      <h1>Book Your Karaoke Session</h1>
+
+      <!-- Display current date and time -->
+      <p id="currentDateTime"></p>
+
+      <!-- Welcome and encourage user to book -->
+      <div id="welcome-text">
+        <p>Welcome to The 1600 Karaoke! Get ready for a fantastic karaoke experience.</p>
+        <p>We encourage you to book your session in advance to secure your preferred date and time.</p>
+      </div>
+
+      <!-- Explanation about Standard and Premium rooms -->
+      <div id="room-info">
+        <h2>Room Information</h2>
+        <p><strong>Standard Room:</strong> Maximum of 5 persons</p>
+        <p><strong>Premium Room:</strong> Maximum of 15 persons</p>
+      </div>
+
+      <form action="#" method="post" id="bookingForm" onsubmit="return confirmBooking()">
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required min="" />
+      
+        <label for="time">Select Time:</label>
+        <input type="time" id="time" name="time" required min="16:00" max="02:00">
+      
+        <label for="room">Room Preference:</label>
+        <select id="room" name="room">
+          <option value="Standard Room">Standard Room</option>
+          <option value="Premium Room">Premium Room</option>
+          <!-- Add more room options if needed -->
+        </select>
+
+        <button type="submit" class="book-now-button">Book Now</button>
+      </form>
+
+      <!-- Table to display available and booked rooms -->
+      <h2>Available and Booked Rooms</h2>
+      <table id="booking-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Room Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024-01-15</td>
+            <td>22:00</td>
+            <td>Standard Room</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <td>2024-01-17</td>
+            <td>16:00</td>
+            <td>Premium Room</td>
+            <td>Booked</td>
+          </tr>
+          <tr>
+            <td>2024-01-17</td>
+            <td>20:00</td>
+            <td>Premium Room</td>
+            <td>Booked</td>
+          </tr>
+          <tr>
+            <td>2024-01-18</td>
+            <td>20:45</td>
+            <td>Premium Room</td>
+            <td>Booked</td>
+          </tr>
+          <tr>
+            <td>2024-01-18</td>
+            <td>18:45</td>
+            <td>Premium Room</td>
+            <td>Booked</td>
+          </tr>
+          <!-- Add more rows as needed for additional data -->
+        </tbody>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 The 1600 Karaoke</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the current page URL
+      var currentPage = window.location.pathname.split('/').pop();
+  
+      // Highlight the active link based on the current page
+      var navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(function (link) {
+        var linkPage = link.getAttribute('href').split('/').pop();
+        if (linkPage === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>

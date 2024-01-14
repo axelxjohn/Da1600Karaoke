@@ -1,0 +1,74 @@
+<!-- confirmation.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Booking Confirmation</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="book-now.html">Book Now</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="confirmation-message">
+      <h1>Booking Confirmed!</h1>
+      <p>Thank you for choosing The 1600 Karaoke. Your karaoke session has been successfully booked.</p>
+
+      <!-- Display booking details in text form with HTML line breaks -->
+      <p>
+        Date: <span id="confirmationDate"></span><br>
+        Time: <span id="confirmationTime"></span><br>
+        Room: <span id="confirmationRoom"></span><br>
+        Price: <span id="confirmationPrice"></span> Pesos
+      </p>
+
+      <!-- You can add more information or details here -->
+    </section>
+
+    <footer>
+      <p>&copy; 2024 The 1600 Karaoke</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the current page URL
+      var currentPage = window.location.pathname.split('/').pop();
+
+      // Highlight the active link based on the current page
+      var navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(function (link) {
+        var linkPage = link.getAttribute('href').split('/').pop();
+        if (linkPage === currentPage) {
+          link.classList.add('active');
+        }
+      });
+
+      // Get the booking details from the query parameters
+      var urlParams = new URLSearchParams(window.location.search);
+      var selectedDate = urlParams.get('date');
+      var selectedTime = urlParams.get('time');
+      var selectedRoom = urlParams.get('room');
+      var roomPrice = urlParams.get('price');
+
+      // Display the booking details on the confirmation page
+      document.getElementById('confirmationDate').innerText = selectedDate;
+      document.getElementById('confirmationTime').innerText = selectedTime;
+      document.getElementById('confirmationRoom').innerText = selectedRoom;
+      document.getElementById('confirmationPrice').innerText = roomPrice;
+    });
+  </script>
+</body>
+</html>

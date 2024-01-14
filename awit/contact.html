@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Contact The 1600 Karaoke</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+          <li><a href="book-now.html">Book Now</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <section id="contact">
+    <h1>Contact The 1600 Karaoke</h1>
+    <p>Have questions or want to reach out? Feel free to contact us using the details below:</p>
+    <address>
+      <p>Email: info@the1600karaoke.com</p>
+      <p>Phone: +123 456 7890</p>
+    </address>
+  </section>
+  <div class="social-media">
+    <img src="pics\fb.png" alt="Facebook"></a>
+    <img src="pics\ig.png" alt="Instagram"></a>
+    <img src="pics\tg.png" alt="Telegram"></a>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2024 The 1600 Karaoke</p>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the current page URL
+    var currentPage = window.location.pathname.split('/').pop();
+
+    // Highlight the active link based on the current page
+    var navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(function (link) {
+      var linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
